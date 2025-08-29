@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 日記アプリ
 
-## Getting Started
+その日の出来事を素早く書き留め、同一画面で下部に時系列で蓄積・閲覧できるシンプルな日記アプリです。
 
-First, run the development server:
+## 🎯 特徴
+
+- **シンプルな入力**: 複数行テキストエリアで素早く記録
+- **オフライン対応**: ブラウザ内のIndexedDBに保存
+- **時系列表示**: 新しい順で記録を一覧表示
+- **キーボード操作**: ⌘/Ctrl+Enterで素早く追加
+- **データ永続化**: ページ再読み込み後も記録が保持
+
+## 🚀 技術スタック
+
+- **フロントエンド**: Next.js 15.5.2 (App Router)
+- **言語**: TypeScript
+- **データベース**: IndexedDB (Dexie.js)
+- **スタイリング**: Tailwind CSS
+- **開発環境**: ESLint, Prettier
+
+## 📋 要件定義
+
+詳細な要件定義は [docs/requirements.md](./docs/requirements.md) をご覧ください。
+
+## 🛠️ 開発環境のセットアップ
 
 ```bash
+# 依存関係のインストール
+npm install
+
+# 開発サーバーの起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで [http://localhost:3000](http://localhost:3000) を開いてアプリケーションを確認できます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 プロジェクト構造
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+todo-app/
+├── docs/
+│   └── requirements.md    # 要件定義書
+├── src/
+│   └── app/
+│       ├── page.tsx       # メインページ
+│       ├── layout.tsx     # レイアウト
+│       └── globals.css    # グローバルスタイル
+├── public/                # 静的ファイル
+└── package.json
+```
 
-## Learn More
+## 🎨 機能
 
-To learn more about Next.js, take a look at the following resources:
+### 基本機能
+- [x] 記録の追加（テキストエリア + ボタン/キーボードショートカット）
+- [x] 記録の一覧表示（新しい順）
+- [x] 記録の削除
+- [x] データの永続化（IndexedDB）
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 拡張機能（予定）
+- [ ] 文字数カウント
+- [ ] 削除後のUndo機能
+- [ ] ダーク/ライトテーマ対応
+- [ ] 日付別アーカイブ
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔧 開発コマンド
 
-## Deploy on Vercel
+```bash
+# 開発サーバー起動
+npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# ビルド
+npm run build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 本番サーバー起動
+npm run start
+
+# リント
+npm run lint
+```
+
+## 📝 ライセンス
+
+このプロジェクトは学習目的で作成されています。
+
+---
+
+**作成者**: [Your Name]  
+**作成日**: 2024年12月
