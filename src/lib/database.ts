@@ -1,3 +1,5 @@
+import { Entry } from '../types';
+
 const DB_NAME = 'diary-app';
 const DB_VERSION = 1;
 const STORE_NAME = 'entries';
